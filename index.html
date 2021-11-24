@@ -1,0 +1,14 @@
+---
+<!-- title: Welcome to my website -->
+feature_image: /assets/images/smile.jpg
+# feature_text: |
+#   ## Hello world
+---
+<div>
+    {%- if strapi.collections.homes.size > 0 -%}
+            {%- for title in strapi.collections.homes -%}
+                <h1>{{ title.title | markdownify}}</h1>
+                <div>{{ title.body | markdownify }}</div>
+            {%- endfor -%}
+    {%- endif -%}
+</div>

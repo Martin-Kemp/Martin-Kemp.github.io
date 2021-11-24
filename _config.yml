@@ -19,6 +19,7 @@ plugins:
 - jekyll-include-cache
 - jemoji
 - jekyll-remote-theme
+- jekyll-strapi
 
 # Site settings
 url: 'https://mydomain.com'
@@ -75,3 +76,18 @@ defaults:
       type: "pages"
     values:
       layout: page # Set the default layout for pages
+
+strapi:
+  # Your API endpoint (optional, default to http://localhost:1337)
+  endpoint: http://localhost:1337
+  collections:
+    posts:
+      type: posts
+    aboutmes:
+      type: aboutmes
+    homes:
+      type: homes
+    products:
+      type: products
+    events:
+      type: events

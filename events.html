@@ -1,0 +1,13 @@
+---
+title: Upcoming Events
+---
+
+<div>
+    {%- if strapi.collections.events.size > 0 -%}
+            {%- for event in strapi.collections.events -%}
+                <h1>{{ event.title | markdownify}}</h1>
+                <div>{{ event.date | markdownify }}</div>
+                <div>{{ event.body | markdownify }}</div>
+            {%- endfor -%}
+    {%- endif -%}
+</div>

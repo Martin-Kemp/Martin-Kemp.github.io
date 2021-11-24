@@ -1,0 +1,11 @@
+---
+title: About me
+---
+
+<div>
+    {%- if strapi.collections.aboutmes.size > 0 -%}
+            {%- for about in strapi.collections.aboutmes -%}
+                {{ about.content | markdownify }}
+            {%- endfor -%}
+    {%- endif -%}
+</div>
