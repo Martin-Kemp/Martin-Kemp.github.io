@@ -1,0 +1,23 @@
+---
+layout: blog
+---
+
+<div class="home">
+    <h1 class="page-heading">Articles</h1>
+    {%- if strapi.collections.posts.size > 0 -%}
+    <ul class="article-list">
+        {%- for article in strapi.collections.posts -%}
+        <li>
+            <span class="article-meta">{{ article.published_at | date_to_string }}</span>
+            <h3>
+                <a class="article-link" href="/posts{{ article.title | relative_url }}">
+                    {{ article.title }}
+                </a>
+            </h3>
+            <!-- Display an excerpt of the article -->
+            <p>{{ article.content | markdownify | strip_html | truncatewords: 10 }}</p>
+        </li>
+        {%- endfor -%}
+    </ul>
+    {%- endif -%}
+</div>

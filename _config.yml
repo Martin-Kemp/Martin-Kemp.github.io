@@ -53,14 +53,14 @@ navigation_footer:
   url: "#top"
 
 # Collections
-collections:
-  posts:
-    title: Posts
-    output: true
-    description: "My thoughts and ideas"
-    # feature_text: |
-    #   Welcome to my blog
-    feature_image: /assets/images/blog.jpg
+# collections:
+  # posts:
+  #   title: Posts
+  #   output: true
+  #   description: "My thoughts and ideas"
+  #   # feature_text: |
+  #   #   Welcome to my blog
+  #   feature_image: /assets/images/blog.jpg
 
 # Collection settings
 defaults:
@@ -83,6 +83,9 @@ strapi:
   collections:
     posts:
       type: posts
+      permalink: /posts/:title/
+      layout: post.html
+      output: true
     aboutmes:
       type: aboutmes
     homes:
